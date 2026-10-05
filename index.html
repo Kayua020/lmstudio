@@ -1,0 +1,1501 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#d8899b" />
+  <meta name="description"
+    content="LM Studio — beleza, cabelos, loiros, alisamento e terapia capilar em São José, SC." />
+  <title>LM Studio | Beleza & Bem-Estar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --pink: #d98d9e;
+      --pink-dark: #a95e73;
+      --pink-soft: #f8e7eb;
+      --cream: #fffaf8;
+      --ink: #2a2225;
+      --muted: #75686c;
+      --line: #ead9dd;
+      --white: #fff;
+      --shadow: 0 20px 60px rgba(75, 39, 49, .12);
+      --radius: 28px;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: "DM Sans", system-ui, sans-serif;
+      line-height: 1.6
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit
+    }
+
+    img {
+      max-width: 100%;
+      display: block
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto
+    }
+
+    .topbar {
+      background: #2b2024;
+      color: #fff;
+      padding: 9px 0;
+      font-size: .83rem
+    }
+
+    .topbar .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 250, 248, .92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(234, 217, 221, .8)
+    }
+
+    .nav-inner {
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.65rem;
+      font-weight: 700
+    }
+
+    .brand img {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      border-radius: 50%
+    }
+
+    .navlinks {
+      display: flex;
+      gap: 25px;
+      font-size: .92rem;
+      font-weight: 600;
+      color: #5e5055
+    }
+
+    .navlinks a:hover {
+      color: var(--pink-dark)
+    }
+
+    .nav-cta {
+      background: var(--pink-dark);
+      color: #fff;
+      padding: 11px 18px;
+      border-radius: 999px;
+      font-weight: 700
+    }
+
+    .hero {
+      padding: 72px 0 84px;
+      overflow: hidden;
+      position: relative
+    }
+
+    .hero:before {
+      content: "";
+      position: absolute;
+      width: 430px;
+      height: 430px;
+      border-radius: 50%;
+      background: #f6d8df;
+      right: -160px;
+      top: -110px;
+      filter: blur(1px);
+      opacity: .65
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      align-items: center;
+      gap: 70px;
+      position: relative
+    }
+
+    .eyebrow {
+      color: var(--pink-dark);
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      font-size: .75rem
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Cormorant Garamond", serif;
+      line-height: .98;
+      margin: 0
+    }
+
+    h1 {
+      font-size: clamp(4rem, 7vw, 6.7rem);
+      font-weight: 600;
+      letter-spacing: -.04em;
+      margin: 12px 0 20px
+    }
+
+    h1 span {
+      color: var(--pink-dark)
+    }
+
+    .hero-copy {
+      font-size: 1.07rem;
+      color: var(--muted);
+      max-width: 590px
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 30px 0
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 1px solid transparent
+    }
+
+    .btn-primary {
+      background: var(--pink-dark);
+      color: #fff;
+      box-shadow: 0 10px 25px rgba(169, 94, 115, .2)
+    }
+
+    .btn-light {
+      border-color: var(--line);
+      background: #fff
+    }
+
+    .mini-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      color: #6f6065;
+      font-size: .86rem
+    }
+
+    .mini-points span {
+      background: #fff;
+      border: 1px solid var(--line);
+      padding: 7px 11px;
+      border-radius: 999px
+    }
+
+    .hero-photo {
+      position: relative;
+      max-width: 430px;
+      margin: auto
+    }
+
+    .photo-frame {
+      padding: 13px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 42% 42% 24px 24px;
+      box-shadow: var(--shadow);
+      transform: rotate(2deg)
+    }
+
+    .photo-frame img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      border-radius: 38% 38% 18px 18px
+    }
+
+    .badge {
+      position: absolute;
+      left: -30px;
+      bottom: 35px;
+      background: #2b2024;
+      color: #fff;
+      border-radius: 18px;
+      padding: 16px 19px;
+      box-shadow: var(--shadow);
+      font-size: .82rem
+    }
+
+    .badge strong {
+      display: block;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.5rem;
+      color: #f7c9d3
+    }
+
+    section {
+      padding: 95px 0
+    }
+
+    .section-head {
+      max-width: 720px;
+      margin-bottom: 45px
+    }
+
+    .section-head h2 {
+      font-size: clamp(2.8rem, 5vw, 4.5rem);
+      margin: 10px 0 14px
+    }
+
+    .section-head p {
+      color: var(--muted);
+      margin: 0
+    }
+
+    .services {
+      background: #fff
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, #fff, #fff8f9);
+      padding: 28px 23px;
+      border-radius: 24px;
+      min-height: 215px;
+      transition: .25s
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow)
+    }
+
+    .icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--pink-soft);
+      color: var(--pink-dark);
+      font-size: 1.35rem;
+      margin-bottom: 20px
+    }
+
+    .card h3 {
+      font-size: 1.75rem;
+      margin-bottom: 8px
+    }
+
+    .card p {
+      font-size: .91rem;
+      color: var(--muted);
+      margin: 0
+    }
+
+    .about {
+      background: var(--pink-soft)
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 70px;
+      align-items: center
+    }
+
+    .about-photo {
+      background: #fff;
+      padding: 11px;
+      border-radius: 28px;
+      box-shadow: var(--shadow)
+    }
+
+    .about-photo img {
+      width: 100%;
+      aspect-ratio: 1/1.08;
+      object-fit: cover;
+      border-radius: 20px
+    }
+
+    .story p {
+      color: #65585d
+    }
+
+    .story .quote {
+      border-left: 3px solid var(--pink-dark);
+      padding-left: 20px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.55rem;
+      color: #4d3e43;
+      margin: 25px 0
+    }
+
+    .specialties {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 13px;
+      margin: 25px 0 30px
+    }
+
+    .specialty {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px 16px;
+      font-weight: 700
+    }
+
+    .specialty small {
+      display: block;
+      color: var(--muted);
+      font-weight: 400
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 24px;
+      aspect-ratio: 1/1.12;
+      background: #f2e3e6;
+      box-shadow: 0 12px 30px rgba(75, 39, 49, .08)
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: .4s
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.04)
+    }
+
+    .contact {
+      background: #2b2024;
+      color: #fff
+    }
+
+    .contact .section-head p {
+      color: #d8c8cd
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px
+    }
+
+    .contact-card {
+      background: #382a30;
+      border: 1px solid #4b3a41;
+      padding: 24px;
+      border-radius: 22px
+    }
+
+    .contact-card span {
+      display: block;
+      color: #d6a7b3;
+      font-size: .76rem;
+      text-transform: uppercase;
+      letter-spacing: .13em;
+      font-weight: 700;
+      margin-bottom: 7px
+    }
+
+    .contact-card a {
+      font-weight: 600;
+      word-break: break-word
+    }
+
+    .hours {
+      margin-top: 20px;
+      padding: 20px;
+      border-radius: 20px;
+      background: #f6dce2;
+      color: #34252a
+    }
+
+    .hours strong {
+      color: var(--pink-dark)
+    }
+
+    footer {
+      background: #21181c;
+      color: #bfaeb4;
+      padding: 25px 0;
+      font-size: .83rem
+    }
+
+    footer .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center
+    }
+
+    .float-wa {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 30;
+      background: #2aa96b;
+      color: #fff;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 1.45rem;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, .2)
+    }
+
+
+
+    .catalog {
+      background: linear-gradient(180deg, #fff, #fff7f9);
+    }
+
+    .catalog-intro {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 35px;
+    }
+
+    .catalog-note {
+      max-width: 430px;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .product-card {
+      display: grid;
+      grid-template-columns: minmax(180px, .72fr) 1fr;
+      gap: 22px;
+      align-items: stretch;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 16px;
+      overflow: hidden;
+      transition: .25s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
+
+    .product-photo {
+      min-height: 300px;
+      border-radius: 22px;
+      overflow: hidden;
+      background: var(--pink-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .product-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .product-content {
+      padding: 10px 8px 10px 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-kicker {
+      color: var(--pink-dark);
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 7px;
+    }
+
+    .product-content h3 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .product-content p {
+      color: var(--muted);
+      font-size: .9rem;
+      margin: 0 0 13px;
+    }
+
+    .product-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin: 0 0 16px;
+    }
+
+    .product-tags span {
+      background: var(--pink-soft);
+      color: #744052;
+      border-radius: 999px;
+      padding: 6px 9px;
+      font-size: .72rem;
+      font-weight: 700;
+    }
+
+    .product-list {
+      margin: 0 0 18px;
+      padding-left: 18px;
+      color: #65585d;
+      font-size: .82rem;
+    }
+
+    .product-list li+li {
+      margin-top: 5px;
+    }
+
+    .product-content .btn {
+      margin-top: auto;
+      width: fit-content;
+      padding: 11px 16px;
+      font-size: .84rem;
+    }
+
+    .catalog-disclaimer {
+      margin-top: 22px;
+      padding: 14px 17px;
+      border-radius: 16px;
+      background: #fdf0f3;
+      border: 1px solid var(--line);
+      color: #76636a;
+      font-size: .78rem;
+    }
+
+    @media(max-width:900px) {
+
+      .hero-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 45px
+      }
+
+      .hero {
+        padding-top: 50px
+      }
+
+      .hero-photo {
+        max-width: 360px
+      }
+
+      .cards {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .navlinks {
+        display: none
+      }
+    }
+
+    @media(max-width:600px) {
+      .topbar .container {
+        justify-content: center;
+        text-align: center
+      }
+
+      .topbar .container span:last-child {
+        display: none
+      }
+
+      .nav-inner {
+        height: 68px
+      }
+
+      .nav-cta {
+        padding: 9px 13px;
+        font-size: .82rem
+      }
+
+      .brand {
+        font-size: 1.4rem
+      }
+
+      .brand img {
+        width: 42px;
+        height: 42px
+      }
+
+      section {
+        padding: 70px 0
+      }
+
+      h1 {
+        font-size: 4rem
+      }
+
+      .cards,
+      .product-grid,
+      .gallery-grid,
+      .contact-grid,
+      .specialties {
+        grid-template-columns: 1fr
+      }
+
+      .product-card {
+        grid-template-columns: 1fr;
+      }
+
+      .product-photo {
+        min-height: 250px;
+      }
+
+      .product-content {
+        padding: 2px 4px 8px;
+      }
+
+      .hero-buttons .btn {
+        width: 100%
+      }
+
+      .badge {
+        left: -8px;
+        bottom: 20px
+      }
+
+      footer .container {
+        flex-direction: column;
+        text-align: center
+      }
+    }
+
+    /* ===== RESPONSIVIDADE EXTRA ===== */
+    .mobile-menu-btn {
+      display: none;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.25rem;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mobile-menu {
+      display: none;
+    }
+
+    @media (max-width: 1100px) {
+      .container {
+        width: min(100% - 32px, 1000px);
+      }
+
+      .hero-grid {
+        gap: 40px;
+      }
+
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .product-card {
+        grid-template-columns: minmax(220px, .7fr) 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .container {
+        width: min(100% - 28px, 620px);
+      }
+
+      .topbar {
+        padding: 8px 0;
+        font-size: .74rem;
+      }
+
+      .topbar .container span:first-child {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .nav-inner {
+        height: 64px;
+        gap: 10px;
+      }
+
+      .brand {
+        font-size: 1.3rem;
+        gap: 8px;
+      }
+
+      .brand img {
+        width: 38px;
+        height: 38px;
+      }
+
+      .navlinks {
+        display: none;
+      }
+
+      .nav-cta {
+        padding: 9px 12px;
+        font-size: .75rem;
+        white-space: nowrap;
+      }
+
+      .mobile-menu-btn {
+        display: inline-flex;
+      }
+
+      .mobile-menu {
+        position: absolute;
+        left: 14px;
+        right: 14px;
+        top: calc(100% + 8px);
+        background: rgba(255, 250, 248, .98);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 8px;
+        box-shadow: var(--shadow);
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .mobile-menu.open {
+        display: flex;
+      }
+
+      .mobile-menu a {
+        padding: 13px 14px;
+        border-radius: 12px;
+        font-weight: 700;
+        color: #5e5055;
+      }
+
+      .mobile-menu a:hover {
+        background: var(--pink-soft);
+        color: var(--pink-dark);
+      }
+
+      .hero {
+        padding: 48px 0 65px;
+      }
+
+      .hero-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 38px;
+      }
+
+      h1 {
+        font-size: clamp(3rem, 16vw, 4.2rem);
+        line-height: .93;
+      }
+
+      .hero-copy {
+        font-size: .98rem;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        margin: 24px 0;
+      }
+
+      .hero-buttons .btn {
+        width: 100%;
+      }
+
+      .mini-points {
+        gap: 7px;
+      }
+
+      .mini-points span {
+        font-size: .76rem;
+        padding: 6px 9px;
+      }
+
+      .hero-photo {
+        max-width: 310px;
+        width: 88%;
+      }
+
+      .badge {
+        left: -6px;
+        bottom: 16px;
+        padding: 12px 14px;
+        font-size: .72rem;
+      }
+
+      .badge strong {
+        font-size: 1.3rem;
+      }
+
+      section {
+        padding: 68px 0;
+      }
+
+      .section-head {
+        margin-bottom: 30px;
+      }
+
+      .section-head h2 {
+        font-size: clamp(2.5rem, 12vw, 3.6rem);
+      }
+
+      .cards,
+      .gallery-grid,
+      .contact-grid,
+      .specialties,
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        min-height: auto;
+        padding: 24px 20px;
+      }
+
+      .about-grid {
+        gap: 30px;
+      }
+
+      .about-photo {
+        max-width: 430px;
+        margin: auto;
+      }
+
+      .story .quote {
+        font-size: 1.35rem;
+      }
+
+      .product-card {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 12px;
+        border-radius: 22px;
+      }
+
+      .product-photo {
+        min-height: 0;
+        height: min(78vw, 340px);
+        border-radius: 17px;
+      }
+
+      .product-content {
+        padding: 4px 7px 10px;
+      }
+
+      .product-content h3 {
+        font-size: 1.75rem;
+      }
+
+      .product-content .btn {
+        width: 100%;
+      }
+
+      .catalog-intro {
+        display: block;
+        margin-bottom: 25px;
+      }
+
+      .catalog-disclaimer {
+        font-size: .73rem;
+      }
+
+      .gallery-item {
+        aspect-ratio: 1 / 1.08;
+      }
+
+      .contact-card {
+        padding: 20px;
+      }
+
+      .contact-card a {
+        font-size: .94rem;
+      }
+
+      .hours {
+        font-size: .9rem;
+      }
+
+      footer .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 7px;
+      }
+
+      .float-wa {
+        right: 16px;
+        bottom: 16px;
+        width: 54px;
+        height: 54px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .container {
+        width: min(100% - 22px, 360px);
+      }
+
+      .brand {
+        font-size: 1.15rem;
+      }
+
+      .brand img {
+        width: 34px;
+        height: 34px;
+      }
+
+      .nav-cta {
+        font-size: .68rem;
+        padding: 8px 9px;
+      }
+
+      h1 {
+        font-size: 2.85rem;
+      }
+
+      .hero-photo {
+        width: 92%;
+      }
+
+      .product-photo {
+        height: 270px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="container">
+      <span>LM Studio • Especialista em loiros • São José/SC</span>
+      <span>Mais de 20 anos de experiência</span>
+    </div>
+  </div>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#inicio"><img src="logo.jpg" alt="Logo LM Studio">LM Studio</a>
+      <nav class="navlinks">
+        <a href="#servicos">Serviços</a>
+        <a href="#historia">Sobre mim</a>
+        <a href="#catalogo">Produtos</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <button class="mobile-menu-btn" type="button" aria-label="Abrir menu" aria-expanded="false"
+        onclick="toggleMobileMenu()">☰</button>
+      <a class="nav-cta"
+        href="https://wa.me/554896812414?text=Olá%2C%20Luzia!%20Quero%20agendar%20um%20horário%20no%20LM%20Studio."
+        target="_blank" rel="noopener">Agendar horário</a>
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="#servicos">Serviços</a>
+        <a href="#historia">Sobre mim</a>
+        <a href="#catalogo">Produtos</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#contato">Contato</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Beleza • Cuidado • Experiência</div>
+          <h1>Sua beleza, <span>na sua melhor versão.</span></h1>
+          <p class="hero-copy">Transformamos você em sua melhor versão com carinho, cuidado e experiência. Pele, cílios,
+            sobrancelhas, cabelos e unhas — com atenção especial aos cabelos.</p>
+          <div class="hero-buttons">
+            <a class="btn btn-primary"
+              href="https://wa.me/554896812414?text=Olá%2C%20Luzia!%20Quero%20agendar%20um%20horário%20no%20LM%20Studio."
+              target="_blank" rel="noopener">Quero agendar</a>
+            <a class="btn btn-light" href="#historia">Conheça minha história</a>
+          </div>
+          <div class="mini-points">
+            <span>✨ Especialista em loiros</span>
+            <span>♡ Atendimento com carinho</span>
+            <span>📍 São José/SC</span>
+          </div>
+        </div>
+        <div class="hero-photo">
+          <div class="photo-frame"><img src="lmperfil.jpeg" alt="Luzia, do LM Studio"></div>
+          <div class="badge"><strong>LM Studio</strong>Beleza & Bem-Estar</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="servicos">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">O que fazemos</div>
+          <h2>Cuidados pensados para você.</h2>
+          <p>Do cuidado diário aos procedimentos que transformam, cada atendimento é feito para valorizar sua beleza e
+            respeitar sua individualidade.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="icon">✦</div>
+            <h3>Cabelos</h3>
+            <p>Loiros, alisamento, cortes, penteados e cuidados para deixar seus cabelos ainda mais bonitos.</p>
+          </article>
+          <article class="card">
+            <div class="icon">♡</div>
+            <h3>Terapia capilar</h3>
+            <p>Cuidados focados na saúde dos fios e do couro cabeludo, com atendimento personalizado.</p>
+          </article>
+          <article class="card">
+            <div class="icon">✧</div>
+            <h3>Beleza</h3>
+            <p>Pele, cílios e sobrancelhas para completar sua experiência de autocuidado.</p>
+          </article>
+          <article class="card">
+            <div class="icon">⌁</div>
+            <h3>Unhas</h3>
+            <p>Manicure e cuidados para suas unhas, com aquele acabamento delicado e bem cuidado.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="historia">
+      <div class="container about-grid">
+        <div class="about-photo"><img src="lmperfil.jpeg" alt="Luzia, fundadora do LM Studio"></div>
+        <div class="story">
+          <div class="eyebrow">Sobre mim</div>
+          <h2>Uma história que começou com um sonho.</h2>
+          <p>Tudo começou em 1994, quando minha irmã abriu um pequeno salão. Ela como cabeleireira, eu como manicure. O
+            começo foi difícil, mas cheio de sonhos.</p>
+          <p>Com a chegada do meu primeiro filho, precisei diminuir o ritmo. Cheguei até a buscar outros trabalhos. Mas
+            o coração? Sempre ficou no salão.</p>
+          <p>Estudei por um ano e, enquanto isso, trabalhava como auxiliar no salão. Fazia um pouco de tudo: maquiagem,
+            depilação, penteados... Até descobrir minha verdadeira paixão: <strong>cabelos.</strong></p>
+          <div class="quote">“Depois de quase 20 anos ao lado da minha irmã, em 2014, criei meu próprio espaço: nascia o
+            LM Studio.”</div>
+          <p>Hoje sigo me atualizando para entregar sempre o melhor. Essa sou eu, Luzia: uma mulher apaixonada pela
+            beleza e pronta para te receber com carinho, cuidado e experiência.</p>
+          <div class="specialties">
+            <div class="specialty">Loiros<small>Especialidade</small></div>
+            <div class="specialty">Alisamento<small>Especialidade</small></div>
+            <div class="specialty">Terapia capilar<small>Cuidado personalizado</small></div>
+            <div class="specialty">Atualização constante<small>Para entregar o melhor</small></div>
+          </div>
+          <a class="btn btn-primary"
+            href="https://wa.me/554896812414?text=Olá%2C%20Luzia!%20Conheci%20o%20LM%20Studio%20pelo%20site%20e%20quero%20saber%20mais."
+            target="_blank" rel="noopener">Falar com a Luzia</a>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section class="catalog" id="catalogo">
+      <div class="container">
+        <div class="catalog-intro">
+          <div class="section-head" style="margin-bottom:0">
+            <div class="eyebrow">Linha profissional</div>
+            <h2>Conheça algum dos nossos produtos.</h2>
+          </div>
+        </div>
+
+        <div class="product-grid">
+          <article class="product-card">
+            <div class="product-photo"><img src="f1v.jpeg" alt="Pós descolorantes Profit of Color"></div>
+            <div class="product-content">
+              <div class="product-kicker">Clareamento</div>
+              <h3>Pós descolorantes</h3>
+              <p>Opções da linha Profit of Color voltadas ao processo de clareamento, com foco em neutralização e
+                proteção dos fios durante o procedimento.</p>
+              <div class="product-tags"><span>Multi Techniques 9</span><span>Platinum Blond 10</span></div>
+              <ul class="product-list">
+                <li>Pigmento Violet 43 para ajudar a equilibrar reflexos amarelados e alaranjados.</li>
+                <li>Fórmula com ativos de cuidado, incluindo queratina, colágeno hidrolisado e proteínas.</li>
+                <li>Indicado para uso profissional e avaliação personalizada do cabelo.</li>
+              </ul>
+              <a class="btn btn-primary"
+                href="https://wa.me/554896812414?text=Olá%2C%20Luzia!%20Quero%20saber%20mais%20sobre%20os%20pós%20descolorantes%20Profit%20of%20Color."
+                target="_blank" rel="noopener">Quero saber mais</a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-photo"><img src="f2v.jpeg" alt="Emulsão oxidante Profit of Color Oxi Cream"></div>
+            <div class="product-content">
+              <div class="product-kicker">Oxidação</div>
+              <h3>Oxi Cream</h3>
+              <p>Emulsão oxidante cremosa criada para acompanhar colorações e pós descolorantes da linha, contribuindo
+                para uma aplicação mais uniforme.</p>
+              <div class="product-tags"><span>5 vol.</span><span>10 vol.</span><span>20 vol.</span><span>30
+                  vol.</span><span>40 vol.</span></div>
+              <ul class="product-list">
+                <li>Consistência espessa e cremosa para facilitar o preparo da mistura.</li>
+                <li>Com Linden Oil, associado a ação emoliente e hidratante.</li>
+                <li>Também apresenta óleo de amêndoas e bisabolol na composição descrita no material.</li>
+              </ul>
+              <a class="btn btn-primary"
+                href="https://wa.me/554896812414?text=Olá%2C%20Luzia!%20Quero%20saber%20mais%20sobre%20a%20Oxi%20Cream%20Profit%20of%20Color."
+                target="_blank" rel="noopener">Quero saber mais</a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-photo"><img src="f3v.jpeg" alt="Coloração Profit of Color"></div>
+            <div class="product-content">
+              <div class="product-kicker">Cor e acabamento</div>
+              <h3>Profit of Color</h3>
+              <p>Coloração profissional desenvolvida para criar diferentes resultados de cor, com opções permanentes e
+                demi-permanentes.</p>
+              <div class="product-tags"><span>Permanente</span><span>Demi-permanente</span><span>Chroma
+                  Fusion</span><span>Proteção UV</span></div>
+              <ul class="product-list">
+                <li>Proposta de cores intensas, naturais e vibrantes, com cobertura e durabilidade.</li>
+                <li>O material destaca proteção UV, Force Field Technology e ativos associados à proteção e luminosidade
+                  dos fios.</li>
+                <li>Também apresenta Chroma Fusion, óleo de limnantto e Sleek Complex na proposta de cuidado e
+                  acabamento.</li>
+              </ul>
+              <a class="btn btn-primary"
+                href="https://wa.me/554896812414?text=Olá%2C%20Luzia!%20Quero%20saber%20mais%20sobre%20a%20coloração%20Profit%20of%20Color."
+                target="_blank" rel="noopener">Quero saber mais</a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-photo"><img src="f4v.jpeg" alt="Blondor Multi Blonde"></div>
+            <div class="product-content">
+              <div class="product-kicker">Clareamento</div>
+              <h3>Blondor Multi Blonde</h3>
+              <p>Linha de produtos para clareamento, desenvolvida para oferecer resultados claros e versáteis em
+                diferentes propostas de loiros.</p>
+              <div class="product-tags"><span>Clareamento</span><span>Loiros</span><span>Lights rápidas</span></div>
+              <ul class="product-list">
+                <li>Proposta de clareamento confiável e suave para cabelo e couro cabeludo.</li>
+                <li>Atende desde resultados claros para loiros até loiros mais intensos.</li>
+                <li>Uma opção profissional para diferentes serviços de clareamento.</li>
+              </ul>
+              <a class="btn btn-primary"
+                href="https://wa.me/554896812414?text=Olá%2C%20Luzia!%20Quero%20saber%20mais%20sobre%20o%20Blondor%20Multi%20Blonde."
+                target="_blank" rel="noopener">Quero saber mais</a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-photo"><img src="f5v.jpeg" alt="Welloxon Perfect"></div>
+            <div class="product-content">
+              <div class="product-kicker">Emulsão reveladora</div>
+              <h3>Welloxon Perfect</h3>
+              <p>Emulsões reveladoras formuladas para acompanhar serviços de coloração e ajudar a alcançar resultados de
+                cor mais precisos.</p>
+              <div class="product-tags"><span>1,9%</span><span>6%</span><span>9%</span></div>
+              <ul class="product-list">
+                <li>Opções de volumes diferentes para ampliar as possibilidades do serviço.</li>
+                <li>Desenvolvida para trabalhar em conjunto com a coloração.</li>
+                <li>Uso profissional de acordo com a técnica e o objetivo do atendimento.</li>
+              </ul>
+              <a class="btn btn-primary"
+                href="https://wa.me/554896812414?text=Olá%2C%20Luzia!%20Quero%20saber%20mais%20sobre%20Welloxon%20Perfect."
+                target="_blank" rel="noopener">Quero saber mais</a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-photo"><img src="f6v.jpeg" alt="Potencializador Estrutural de Superfície"></div>
+            <div class="product-content">
+              <div class="product-kicker">Preparação e proteção</div>
+              <h3>Potencializador Estrutural de Superfície</h3>
+              <p>Produto apresentado como apoio aos protocolos de cor, com foco na preparação da superfície do cabelo.
+              </p>
+              <div class="product-tags"><span>Resistência</span><span>Suavidade</span><span>Brilho</span></div>
+              <ul class="product-list">
+                <li>Ajuda a aumentar a resistência da superfície do cabelo.</li>
+                <li>Contribui para suavidade e brilho dos fios.</li>
+                <li>Prepara o cabelo para resultados de cor mais uniformes.</li>
+              </ul>
+              <a class="btn btn-primary"
+                href="https://wa.me/554896812414?text=Olá%2C%20Luzia!%20Quero%20saber%20mais%20sobre%20o%20Potencializador%20Estrutural."
+                target="_blank" rel="noopener">Quero saber mais</a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-photo"><img src="f7.jpeg" alt="IGORA ROYAL"></div>
+            <div class="product-content">
+              <div class="product-kicker">Coloração</div>
+              <h3>IGORA ROYAL</h3>
+              <p>Coloração com tecnologia High Definition, apresentada para proporcionar direção de tom, intensidade e
+                cobertura.</p>
+              <div class="product-tags"><span>High Definition</span><span>Intensidade</span><span>Cobertura</span></div>
+              <ul class="product-list">
+                <li>Matriz de pigmentos para uma direção de tom mais clara e resultados definidos.</li>
+                <li>Pigmentos pensados para aumentar a penetração e retenção da cor.</li>
+                <li>Foco em cor intensa, cobertura e longa duração.</li>
+              </ul>
+              <a class="btn btn-primary"
+                href="https://wa.me/554896812414?text=Olá%2C%20Luzia!%20Quero%20saber%20mais%20sobre%20IGORA%20ROYAL."
+                target="_blank" rel="noopener">Quero saber mais</a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-photo"><img src="f8.jpeg" alt="IGORA ROYAL oxidante"></div>
+            <div class="product-content">
+              <div class="product-kicker">Oxidação</div>
+              <h3>IGORA ROYAL Oxidante</h3>
+              <p>Emulsão reveladora apresentada no material para acompanhar a linha de coloração IGORA ROYAL.</p>
+              <div class="product-tags"><span>9%</span><span>30 Vol.</span><span>Revelação</span></div>
+              <ul class="product-list">
+                <li>Auxilia no desenvolvimento da cor durante o serviço.</li>
+                <li>Apresentado no material na versão 9% / 30 Vol.</li>
+                <li>Aplicação profissional conforme a técnica escolhida.</li>
+              </ul>
+              <a class="btn btn-primary"
+                href="https://wa.me/554896812414?text=Olá%2C%20Luzia!%20Quero%20saber%20mais%20sobre%20o%20oxidante%20IGORA%20ROYAL."
+                target="_blank" rel="noopener">Quero saber mais</a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-photo"><img src="f9.jpeg" alt="Detox System"></div>
+            <div class="product-content">
+              <div class="product-kicker">Detox e equilíbrio</div>
+              <h3>Detox System</h3>
+              <p>Linha indicada para equilibrar a saúde do couro cabeludo, nutrir e purificar os fios, promovendo
+                sensação de frescor e leveza.</p>
+              <div class="product-tags"><span>Todos os tipos</span><span>Purificação</span><span>Controle de
+                  oleosidade</span></div>
+              <ul class="product-list">
+                <li>Atuação descrita com ação adstringente, antipoluição, antisséptica e quelante.</li>
+                <li>Ajuda a neutralizar íons metálicos e outras toxinas absorvidas pelos cabelos.</li>
+                <li>Resultados esperados: controle de oleosidade, purificação e refrescância.</li>
+              </ul>
+              <a class="btn btn-primary"
+                href="https://wa.me/554896812414?text=Olá%2C%20Luzia!%20Quero%20saber%20mais%20sobre%20o%20Detox%20System."
+                target="_blank" rel="noopener">Quero saber mais</a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-photo"><img src="f10.jpeg" alt="Absolute Oil"></div>
+            <div class="product-content">
+              <div class="product-kicker">Nutrição premium</div>
+              <h3>Absolute Oil</h3>
+              <p>Linha de tratamento premium voltada à nutrição de cabelos secos e desnutridos, com uma combinação de
+                óleos nutritivos.</p>
+              <div class="product-tags"><span>Cabelos secos</span><span>Nutrição</span><span>Tratamento</span></div>
+              <ul class="product-list">
+                <li>Combina óleos de Argan, Coco, Macadâmia, Avelã, Camellia, Jojoba e Crambe.</li>
+                <li>Foco em recuperar a beleza dos fios e proporcionar toque suave e aveludado.</li>
+                <li>Resultado esperado: nutrição para cabelos secos e desnutridos.</li>
+              </ul>
+              <a class="btn btn-primary"
+                href="https://wa.me/554896812414?text=Olá%2C%20Luzia!%20Quero%20saber%20mais%20sobre%20o%20Absolute%20Oil."
+                target="_blank" rel="noopener">Quero saber mais</a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-photo"><img src="f11.jpeg" alt="Cachos System"></div>
+            <div class="product-content">
+              <div class="product-kicker">Cachos e definição</div>
+              <h3>Cachos System</h3>
+              <p>Tratamento intensivo para cabelos cacheados, crespos e ondulados, com proposta de limpeza delicada,
+                hidratação e nutrição.</p>
+              <div class="product-tags"><span>Cacheados</span><span>Crespos</span><span>Ondulados</span><span>No/Low
+                  Poo</span></div>
+              <ul class="product-list">
+                <li>Fórmula descrita como livre de sulfatos, corantes, petrolatos, parabenos e silicones.</li>
+                <li>Conta com óleo de Tamanu, óleo de coco e reposição lipídica.</li>
+                <li>Resultados esperados: definição, nutrição e cuidado No/Low Poo.</li>
+              </ul>
+              <a class="btn btn-primary"
+                href="https://wa.me/554896812414?text=Olá%2C%20Luzia!%20Quero%20saber%20mais%20sobre%20o%20Cachos%20System."
+                target="_blank" rel="noopener">Quero saber mais</a>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="catalog-disclaimer">Os produtos são apresentados como parte do trabalho profissional do LM Studio. A
+          escolha, proporção e forma de uso dependem de avaliação técnica e do objetivo de cada atendimento.</div>
+      </div>
+    </section>
+
+    <section id="galeria">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Um pouco do LM Studio</div>
+          <h2>Beleza nos detalhes.</h2>
+          <p>Alguns registros da presença do LM Studio nas redes sociais.</p>
+        </div>
+        <div class="gallery-grid">
+          <div class="gallery-item"><img src="exemplo1.jpeg" alt="Conteúdo do LM Studio sobre cabelos loiros"></div>
+          <div class="gallery-item"><img src="exemplo2.jpeg" alt="Luzia em um conteúdo do LM Studio"></div>
+          <div class="gallery-item"><img src="exemplo3.jpeg" alt="Unhas feitas no LM Studio"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contato">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Agende sua experiência</div>
+          <h2>Vamos cuidar de você?</h2>
+          <p>Entre em contato e encontre o melhor horário para o seu atendimento.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <span>WhatsApp</span>
+            <a href="https://wa.me/554896812414?text=Olá%2C%20Luzia!%20Quero%20agendar%20um%20horário." target="_blank"
+              rel="noopener">+55 (48) 9681-2414</a>
+          </div>
+          <div class="contact-card">
+            <span>E-mail</span>
+            <a href="mailto:lmstudiobelezaebemestar2014@gmail.com">lmstudiobelezaebemestar2014@gmail.com</a>
+          </div>
+          <div class="contact-card">
+            <span>Instagram</span>
+            <a href="https://instagram.com/lmstudiobeleza" target="_blank" rel="noopener">@lmstudiobeleza</a>
+          </div>
+          <div class="contact-card">
+            <span>Localização</span>
+            <a href="https://www.google.com/maps/search/?api=1&query=Rua+Domingos+Filomeno+101%2C+Praia+Comprida%2C+São+José%2C+SC"
+              target="_blank" rel="noopener">Rua Domingos Filomeno, nº 101<br>Praia Comprida, São José/SC</a>
+          </div>
+        </div>
+        <div class="hours">
+          <strong>Horário de funcionamento:</strong> segunda a sexta, das 10:00 às 22:00.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <span>© 2026 LM Studio • Beleza & Bem-Estar</span>
+      <span>São José • Santa Catarina</span>
+    </div>
+  </footer>
+
+  <a class="float-wa"
+    href="https://wa.me/554896812414?text=Olá%2C%20Luzia!%20Quero%20agendar%20um%20horário%20no%20LM%20Studio."
+    target="_blank" rel="noopener" aria-label="Falar pelo WhatsApp">◉</a>
+
+  <script>
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      const button = document.querySelector('.mobile-menu-btn');
+      const isOpen = menu.classList.toggle('open');
+      button.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      button.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
+      button.textContent = isOpen ? '×' : '☰';
+    }
+
+    document.querySelectorAll('.mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        const menu = document.getElementById('mobileMenu');
+        const button = document.querySelector('.mobile-menu-btn');
+        menu.classList.remove('open');
+        button.setAttribute('aria-expanded', 'false');
+        button.setAttribute('aria-label', 'Abrir menu');
+        button.textContent = '☰';
+      });
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 760) {
+        const menu = document.getElementById('mobileMenu');
+        const button = document.querySelector('.mobile-menu-btn');
+        if (menu && button) {
+          menu.classList.remove('open');
+          button.setAttribute('aria-expanded', 'false');
+          button.setAttribute('aria-label', 'Abrir menu');
+          button.textContent = '☰';
+        }
+      }
+    });
+  </script>
+
+</body>
+
+</html>
